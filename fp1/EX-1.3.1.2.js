@@ -1,4 +1,5 @@
 function soma(a = 1, b = 3) { //colocar valores default ou imprimir mensagens em throws ou usar condições
+    a = a || 0
     return a + b
 }
 console.log(soma(1, 2))
