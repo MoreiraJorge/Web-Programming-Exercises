@@ -1,22 +1,24 @@
 var battleShip = {
-    map: [1,0,1,0,0,0,0,1,0,1,0,0,1,0,0,1,0,1],
+    map: [[]],
     title: "Battleship",
     counter: 0,
-    markPosition: function(index){
+    markPosition: function (x, y) {
         this.counter++;
-        return this.map[index];
+        return this.map[x][y];
     },
-    checkShot: function(markPosition){
-        if(markPosition == 1){
+    checkShot: function (markPosition) {
+        if (markPosition == 1) {
             console.log("O tiro acerta");
         } else {
             console.log("O tiro falha");
         }
+    },
+    addShip: function (x, y) {
+        this.map[x][y] = 1;
     }
 }
 
-
-battleShip.checkShot(battleShip.markPosition(0));
-battleShip.checkShot(battleShip.markPosition(1));
-battleShip.checkShot(battleShip.markPosition(2));
+battleShip.addShip(0,0);
+battleShip.checkShot(battleShip.markPosition(0,0));
+battleShip.checkShot(battleShip.markPosition(0,1));
 console.log(battleShip.counter);
