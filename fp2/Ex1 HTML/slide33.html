@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+
+    <h2>HTML Forms</h2>
+
+    <form action="/action_page">
+        First Name:<br>
+        <input type="text" name="firstname" value="Mickey">
+        Last name:<br>
+        <input type="text" name="lastname" value="Mouse">
+        <br><br>
+        <input type="submit" value="submit">
+    </form>
+
+    <br><br>
+
+    <form>
+        <input type="radio" name="gender" value="male" checked>
+        Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender" value="other"> Other
+    </form>
+
+    <br><br>
+
+    <form>
+        <input type="checkbox" name="vehicle1" value="Bike">
+        I have a bike<br>
+        <input type="checkbox" name="vehicle2" value="Car">
+        I have a car
+    </form>
+
+    <br><br>
+
+    <select name="cars">
+        <option value="volvo" selected>Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+    </select>
+
+    <br><br>
+
+    <textarea name="message" rows="10" cols="30">
+        The cat was playing in the garden.
+    </textarea>
+
+    <br><br>
+
+    <button type="button" onclick="alert('Hello World!')">
+        Click Me!
+    </button>
+
+    <br><br>
+
+    <form action="/action_page">
+        <input list="browsers">
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+        </datalist>
+    </form>
+
+</body>
+
+</html>
