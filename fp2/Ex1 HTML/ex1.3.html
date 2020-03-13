@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+
+    <h1>Questionário LEI ESTG</h1>
+
+    <form>
+
+        <label for="fname">Primeiro Nome:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Ultimo nome:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+
+        <h3>Email:</h3>
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email">
+
+        <h3>Sexo:</h3>
+        <input type="radio" id="homem" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="mulher" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="outro" name="gender" value="other">
+        <label for="other">Other</label><br><br>
+
+        Que meio de transporte utiliza?
+        <select name="Meio de transporte">
+            <option value="cavalo">cavalo</option>
+            <option value="a pé">pe</option>
+            <option value="trator">trator</option>
+            <option value="avião">aviao</option>
+        </select>
+
+        <br><br>
+
+        <h3>Opinião geral do curso</h3>
+        <textarea name="message" rows="10" cols="30">
+        </textarea>
+        <br><br>
+
+        O curso é bom (bom, muito bom, mau)?<br>
+        <input type="radio" id="bom" name="level" value="bom">
+        <label for="bom">bom</label><br>
+        <input type="radio" id="muito bom" name="level" value="muito bom">
+        <label for="muitobom">muitobom</label><br>
+        <input type="radio" id="mau" name="level" value="mau">
+        <label for="mau">mau</label><br><br>
+
+        <br>
+
+
+    </form>
+
+
+    <br><br>
+    <input type="submit" value="Submit" onclick="alert('Formulário submetido')">
+</body>
+
+</html>
