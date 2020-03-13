@@ -1,0 +1,17 @@
+p {
+    /*comment*/
+    color: red;
+    text-align: center;
+}
+
+.center {
+    /*comment*/
+    color: blue;
+    text-align: center;
+}
+
+#different {
+    /*comment*/
+    color: green;
+    text-align: center;
+}
