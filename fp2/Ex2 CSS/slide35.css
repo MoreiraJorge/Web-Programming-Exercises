@@ -1,0 +1,44 @@
+body{
+    background-color: blue;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.column1{
+    background-color: lightskyblue;
+    padding-right: 20px;
+}
+
+.column2 {
+    flex-direction: column;
+}
+
+.logo {
+    color: blue;
+    background-color: cornflowerblue;
+    margin: 0px;
+    padding: 20px;
+}
+
+.footer {
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+}
+
+.content {
+    padding: 20px;
+    background-color: white;
+}
+
+.content > h2{
+    color: cornflowerblue;
+}
+
+.image{
+    float: right;
+    padding-right: 20px;
+}
