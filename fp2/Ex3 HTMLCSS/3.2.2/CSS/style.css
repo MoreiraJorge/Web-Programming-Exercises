@@ -11,6 +11,9 @@ header {
   color: white;
   padding: 30px;
   font-size: 35px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
 }
 
 header h2 {
@@ -33,6 +36,10 @@ section nav {
   height: 300px;
   background: #999898;
   padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: auto;
 }
 
 section nav ul {
@@ -42,15 +49,22 @@ section nav ul {
 
 section article {
   padding: 20px;
-  width: 70%;
   background-color: lightgray;
   height: 300px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: auto;
 }
 
 footer {
   background-color: #6d6c6c;
   padding: 10px;
   text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: auto;
 }
 
 footer p {
@@ -58,34 +72,11 @@ footer p {
 }
 
 @media (max-width: 600px) {
-  header {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    width: 100%;
-  }
   section {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-  section nav {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    width: 100%;
-    height: auto;
-  }
-  section article {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    width: 100%;
-    height: auto;
-  }
-  footer {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    width: 100%;
-    height: auto;
   }
 }
 /*# sourceMappingURL=style.css.map */
