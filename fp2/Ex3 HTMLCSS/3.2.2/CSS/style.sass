@@ -9,8 +9,6 @@ header
     color: white
     padding: 30px
     font-size: 35px
-    box-sizing: border-box
-    width: 100%
                 
     h2
         margin-top: 0px
@@ -26,9 +24,6 @@ section
         height: 300px
         background: rgb(153, 152, 152)
         padding: 20px
-        box-sizing: border-box
-        width: 100%
-        height: auto
 
         ul
             padding: 0
@@ -37,27 +32,41 @@ section
 
     article
         padding: 20px
+        width: 70%
         background-color: lightgray
         height: 300px
-        box-sizing: border-box
-        width: 100%
-        height: auto
 
 footer
     background-color: rgb(109, 108, 108)
     padding: 10px
     text-align: center
-    box-sizing: border-box
-    width: 100%
-    height: auto
 
     p
         color: white
 
 @media (max-width: 600px)
-    section
-        flex-direction: column     
+
+        header
+            box-sizing: border-box
+            width: 100%
+
+        section
+            flex-direction: column
+                
+            nav
+                box-sizing: border-box
+                width: 100%
+                height: auto
+                
+            article
+                box-sizing: border-box
+                width: 100%
+                height: auto
         
+        footer
+            box-sizing: border-box
+            width: 100%
+            height: auto
 
 
     
