@@ -1,0 +1,73 @@
+body, html
+    margin: 0px
+    padding: 0px
+    box-sizing: border-box
+    
+header
+    background-color: rgb(67, 67, 68)
+    text-align: center
+    color: white
+    padding: 30px
+    font-size: 35px
+                
+    h2
+        margin-top: 0px
+        padding-bottom: 30px
+
+section
+    display: flex
+    flex-direction: row
+
+
+    nav
+        width: 30%
+        height: 300px
+        background: rgb(153, 152, 152)
+        padding: 20px
+
+        ul
+            padding: 0
+            list-style-type: none
+
+
+    article
+        padding: 20px
+        width: 70%
+        background-color: lightgray
+        height: 300px
+
+footer
+    background-color: rgb(109, 108, 108)
+    padding: 10px
+    text-align: center
+
+    p
+        color: white
+
+@media (max-width: 600px)
+
+        header
+            box-sizing: border-box
+            width: 100%
+
+        section
+            flex-direction: column
+            
+                
+            nav
+                box-sizing: border-box
+                width: 100%
+                height: auto
+                
+            article
+                box-sizing: border-box
+                width: 100%
+                height: auto
+        
+        footer
+            box-sizing: border-box
+            width: 100%
+            height: auto
+
+
+    
