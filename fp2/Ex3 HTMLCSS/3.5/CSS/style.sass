@@ -1,0 +1,107 @@
+body, html 
+    min-height: 100vh
+    padding: 0px
+    margin: 0px
+
+.top-header
+    background-color: lightblue
+    padding: 20px
+    border-bottom: 1px solid lightgray
+
+    h1
+        margin: 0px
+        padding: 0px
+        color: blue
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        text-align: center
+
+aside
+    margin: 0px
+    padding: 10px 20px 10px 20px
+
+    ul
+        list-style: none
+        margin: 0px
+        padding-bottom: 10px
+
+    .nav-links
+        display: flex
+        flex-direction: column
+        justify-content: space-evenly
+        flex: 1 1 auto
+
+        > *
+            position: relative
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            box-sizing: border-box
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        
+        .inner-nav-links
+            display: flex
+            flex-direction: column
+            
+            > *
+                color: green
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+main 
+    display: flex
+    box-sizing: border-box
+
+    .content
+        flex: 1 1 auto
+        box-sizing: border-box
+
+        header
+            flex: 1 1 auto
+            padding: 20px
+            border: 1px solid lightgray
+
+        article
+            display: flex
+            flex-direction: column
+            padding: 5px
+
+            > *
+                display: inline-flex
+            p
+                padding-left: 20px
+                width: 300px
+#articl1
+    background-color: gray
+
+#articl2
+    background-color: orange
+
+#articl3
+    background-color: cyan
+
+#articl4
+    background-color: purple
+
+footer 
+    display: flex
+    box-sizing: border-box
+    justify-content: space-between
+    flex-wrap: nowrap
+    padding: 10px 20px 10px 20px
+    background-color: lightblue
+
+    ul
+        list-style: none
+        flex: 1 1 auto
+
+        .low-nav-links
+            display: flex
+            justify-content: space-evenly
+
+        > *
+            flex: 1 1 auto
+            position: relative
+            display: inline-flex
+            align-items: center
+            box-sizing: border-box
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+            padding-left: 10px
