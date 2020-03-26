@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status === 200) {
+                var resp = JSON.parse(this.responseText);
+                processRequest(resp);
+            }
+        }
+
+        xhttp.open("GET", "https://api.openchargemap.io/v3/poi/?output=json&countrycode=US&maxresults=10",
+            true);
+        xhttp.send();
+
+        function processRequest(Resp) {
+            var i, country, lat, lon, address;
+            var tbody = document.getElementById('tbody');
+
+            for (i = 0; i < resp.length; i++) {
+                country = resp[i]["AddressInfo"]["Country"]["ISOCode"];
+                lat = resp[i]["AddressInfo"]["Latitude"];
+                lon = resp[i]["AddressInfo"]["Longitude"];
+                address = resp[i]["AddressInfo"]["AddressLine1"];
+
+                addLine(tbody, country, lat, lon, address);
+            }
+        }
+
+        function addLine(tableBody, country, lat, lon, address) {
+
+            var row = tableBody.insertRow(0);
+            row.inserCell(0).innerHTML = country;
+            row.inserCell(1).innerHTML = lat;
+            row.inserCell(2).innerHTML = lon;
+            row.inserCell(3).innerHTML = address;
+            //alert(address);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

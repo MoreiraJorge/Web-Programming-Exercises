@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide 20</title>
+</head>
+
+<body>
+    <p id="p2">Hello World!</p>
+    <button type="button" id="myButton"> Muda Cor </button>
+
+    <script>
+        function changeColor() {
+            document.getElementById("p2").style.color = 'red';
+
+            document.getElementById("mybutton").removeEventListener("click", changeColor);
+        }
+
+        document.getElementById("myButton").addEventListener("click", changeColor);
+        //document.getElementById("myButton").onclick = changeColor;
+
+    </script>
+</body>
+
+</html>
