@@ -1,0 +1,56 @@
+$space: 5px
+$lineWidth: 2px
+$lineColor: rgba(255, 255, 255, 0.2)
+$backgroundColor: rgba(255, 255, 255, 0.03)
+
+header,
+nav
+	border-bottom: 1px solid $lineColor
+	box-sizing: border-box
+
+nav
+	> *
+		border-left: 1px solid $lineColor
+		border-right: 1px solid $lineColor
+		box-sizing: border-box
+	ul li
+		border-right: 1px solid $lineColor
+	ul li ul
+		background: $backgroundColor
+		border: 1px solid $lineColor
+
+footer
+	border-top: 1px solid $lineColor
+	box-sizing: border-box
+
+picture
+	border: 1px solid $lineColor
+	box-sizing: border-box
+	background-color: $backgroundColor
+
+.widget-header
+	position: relative
+	border: 1px solid $lineColor
+
+	.title::after
+		content: ''
+		position: absolute
+		display: inline-block
+		
+		top: 0
+		height: 100%
+		width: 1px
+		margin-left: 12px
+
+		background: $lineColor
+		transform: skewX(-15deg)
+
+input,
+.search-container
+	border: 1px solid $lineColor!important
+
+.search-container input
+	border: none!important
+
+.full-background
+	background-image: repeating-linear-gradient(-45deg, transparent, transparent #{$space}, $lineColor #{$space}, $lineColor #{$space + $lineWidth}, transparent #{$space + $lineWidth}, transparent #{$space * 2})

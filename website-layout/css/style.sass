@@ -1,0 +1,325 @@
+@import mixins
+@import layout
+@import theme
+@import wireframes
+
+body
+	min-height: 100vh
+	margin: 0
+	padding: 0
+
+	color: $textColor
+	background-image: $backgroundGradient
+	background-size: cover
+	background-repeat: no-repeat
+
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+
+p
+	line-height: 160%
+	font-size: 0.9em
+
+a
+	color: $textColor
+
+input
+	appearance: none
+	border-radius: 0
+	box-sizing: border-box
+
+	color: $textColor
+	background: transparent
+	border: none
+	outline: none
+
+	text-indent: 8px
+
+	&::placeholder
+		color: $textColor
+		opacity: 0.4
+
+.header
+	height: $headerHeight
+	padding: 12px 20px
+	box-sizing: border-box
+
+	> *
+		display: flex
+		justify-content: space-between
+		max-width: $maxContentWidth
+		margin-left: auto
+		margin-right: auto
+
+	.logo
+		flex: 1 1 50%
+		display: inline-block
+
+		height: calc(#{$headerHeight} - 24px)
+		max-width: 120px
+
+		background-image: url(../resources/logo.png)
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: left center
+
+	.actions
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: flex-end
+
+.top-nav
+	position: sticky
+
+	top: 0
+	height: $topNavHeight
+	padding: 0 20px
+	box-sizing: border-box
+
+	z-index: 10
+
+	> *
+		display: flex
+		justify-content: space-between
+		align-items: center
+		height: $topNavHeight
+
+		max-width: $maxContentWidth
+		margin-left: auto
+		margin-right: auto
+	ul
+		padding: 0
+		margin: 0
+		list-style: none
+
+	small
+		font-size: 0.8em
+
+	.nav-links
+		display: flex
+
+		> *
+			position: relative
+			display: inline-flex
+			align-items: center
+			height: $topNavHeight
+
+			padding: 8px 12px
+			box-sizing: border-box
+
+			text-transform: uppercase
+			cursor: pointer
+
+	.inner-nav-links
+		position: absolute
+		top: 100%
+		left: 0
+		padding-left: 12px
+		opacity: 0
+		pointer-events: none
+
+		li
+			padding: 6px 12px
+			white-space: nowrap
+			cursor: pointer
+
+	li:hover > .inner-nav-links
+		opacity: 1
+		pointer-events: initial
+
+	.search-container
+		height: $topNavHeight
+		box-sizing: border-box
+		padding-right: 8px
+		.icon
+			padding-left: 8px
+		input
+			height: $topNavHeight
+			box-sizing: border-box
+			font-size: 0.9em
+
+.main
+	.content
+		padding: 20px
+		display: flex
+		max-width: $maxContentWidth
+		margin-left: auto
+		margin-right: auto
+		> *:first-child
+			flex: 1 1 auto
+
+	aside
+		flex: 0 0 30%
+		padding-left: 20px
+		box-sizing: border-box
+
+.hero-carousel
+	.item
+		+aspect(16, 9)
+		width: calc(100vw - 40px)
+		max-width: $maxContentWidth
+
+		.title
+			font-size: 3em
+			margin-bottom: 0
+
+		&:first-child
+			margin-left: 20px
+		&:last-child
+			margin-right: 20px
+
+		+ .item
+			margin-left: 10px
+
+.carousel
+	margin-bottom: -3px
+
+	overflow-x: auto
+	overscroll-behavior-x: contain
+	scroll-snap-type: x mandatory
+	scroll-behavior: smooth
+
+	ul
+		display: inline-flex
+		height: 100%
+		padding: 0
+		margin: 0
+		list-style: none
+
+	.item
+		+aspect(21, 9)
+		scroll-snap-align: center
+		picture
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		top: 0
+
+		.details
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 40%
+			padding: 40px
+
+		.scroll-anchor
+			position: absolute
+			top: -40px
+			left: 0
+			right: 0
+
+	@media screen and (min-width: #{$maxContentWidth})
+		.item:first-child
+			margin-left: calc(50vw - #{$maxContentWidth/2})
+
+		.item:nth-child(4)
+			margin-right: calc(50vw - #{$maxContentWidth/2})
+
+.page_control
+	display: flex
+	justify-content: center
+	padding: 10px 0
+
+	> * + *
+		margin-left: 10px
+
+	a:active
+		color: blue!important
+
+.list-grid
+	display: grid
+	grid-gap: 20px
+
+.small-grid
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-gap: 20px 12px
+
+.large-grid
+	display: grid
+	grid-template-columns: repeat(2, 1fr)
+	grid-gap: 20px
+
+.widget
+	margin-bottom: 32px
+
+.widget-header
+	padding: 8px 12px
+	margin-bottom: 20px
+	.title
+		margin: 0
+		text-transform: uppercase
+		font-weight: normal
+		font-size: 0.8em
+
+.vertical-card
+	display: flex
+	flex-direction: column
+	> *
+		width: 100%
+
+	.title
+		margin-top: 1em
+		margin-bottom: 0.5em
+
+.horizontal-card
+	display: flex
+	flex-direction: row
+	picture
+	flex: 0 0 calc(50% - 10px)
+	margin-right: 20px
+	.title
+		margin-top: 0.2em
+		margin-bottom: 1em
+
+.picture
+	position: relative
+
+	&.aspect-16_9
+		+aspect(16, 9)
+
+	&.aspect-4_3
+		+aspect(4, 3)
+
+	&.aspect-4_4
+		+aspect(4, 4)
+
+	> *
+		display: flex
+		align-items: center
+		justify-content: center
+		position: absolute
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+
+footer
+	padding: 12px 20px
+	box-sizing: border-box
+
+	> *
+		max-width: $maxContentWidth
+		margin-left: auto
+		margin-right: auto
+
+	a
+		white-space: nowrap
+
+	.social-links > * + *
+		margin-left: 20px
+
+.hstack
+	display: flex
+	justify-content: space-between
+	margin-left: -20px
+	margin-right: -20px
+
+	> *
+		flex: 1 1 var(--col-basis)
+		padding: 0 20px
+
+.info-bar
+	margin-top: 20px
+	text-align: center
