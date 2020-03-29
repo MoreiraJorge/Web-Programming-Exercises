@@ -350,6 +350,11 @@ input::placeholder {
 .carousel .item {
   position: relative;
   scroll-snap-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
 }
 
 .carousel .item::before {
@@ -366,14 +371,6 @@ input::placeholder {
   right: 0;
   bottom: 0;
   left: 0;
-}
-
-.carousel .item picture {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
 }
 
 .carousel .item .details {
@@ -483,9 +480,6 @@ input::placeholder {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-}
-
-.horizontal-card picture {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 calc(50% - 10px);
           flex: 0 0 calc(50% - 10px);
