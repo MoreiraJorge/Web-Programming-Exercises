@@ -1,0 +1,10 @@
+EX3 
+    1. - 
+    2. vanilla javascript / ES5
+    3. jQuery, Popper.js, Bootstrap
+    4. -
+    5. 
+    6. - Jquey
+    7. -
+    8. -
+    9. -
