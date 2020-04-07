@@ -10,9 +10,9 @@ const app = express();
 app.use(express.static('view'));
 
 app.get('/submission', (req, res) => {
-    const q = parse(req.url)
-    const query = parseQuery(q.query)
-    
+    //var myText = req.query.name;
+
+    res.send();
 })
 
 
