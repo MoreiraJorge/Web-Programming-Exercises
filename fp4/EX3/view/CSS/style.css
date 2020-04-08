@@ -33,4 +33,10 @@ form > * {
   display: block;
   margin-top: 10px;
 }
+
+#search {
+  margin-top: 10px;
+  border-style: 2px;
+  border-color: black;
+}
 /*# sourceMappingURL=style.css.map */
