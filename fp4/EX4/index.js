@@ -7,7 +7,8 @@ const fs = require('fs');
 const { parse } = require('url');
 const { parse: parseQuery } = require('querystring')
 const app = express();
-var counter = 0;
+const counter = {};
+const crypto = require('crypto');
 
 app.use(express.static('view'));
 app.use(express.static('uploads'));
@@ -47,15 +48,6 @@ app.get('/download', function (req, res) {
     const q = parse(req.url);
     const query = parseQuery(q.query);
     let file = query.Dfile
-
-    /*
-    if(file !== tmpFile){
-        counter = 0
-    }
-
-    var tmpFile = file;
-    */
-
     if (file == '') {
         return res.status(400).send(`<h1>404 NOT FOUND</h1>`);
     }
@@ -66,13 +58,19 @@ app.get('/download', function (req, res) {
         if (err) {
             return res.status(404).send(`<h1>404 NOT FOUND</h1>`);
         } else {
+            // Hash: ID do ficheiro - o md5 cria sempre a mesma hash para uma determinada string
+            const hash = crypto.createHash('md5').update(file).digest('hex');
+
+            // Criar uma entrada default para um ficheiro que nunca foi pedido. Também poderia ser feito no /upload
+            if (!counter[hash]) {
+                counter[hash] = 0;
+            }
+            counter[hash] += 1;
+            console.log(counter[hash]);
             res.download(path);
+
         }
     });
-
-    counter++;
-    console.log(counter);
-
 });
 
 app.listen(PORT, () => {
