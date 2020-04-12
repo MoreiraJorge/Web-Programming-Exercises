@@ -6,12 +6,22 @@ const { parse: parseQuery } = require('querystring')
 const fs = require('fs');
 const uuidv4 = require('uuid/v4');
 const read = require('./myReader');
+var nodemailer = require('nodemailer');
 
 const PORT = process.env.PORT || 3000
 const app = express();
 
 app.use(express.static('view'));
 app.use(express.static('Results'));
+
+var transporter = nodemailer.createTransport({
+    service: 'outlook',
+    auth: {
+        user: 'moreirajorge_17@outlook.pt',
+        pass: 'pass'
+    }
+});
+
 
 //Submit and create file with key
 app.get('/submission', (req, res) => {
@@ -34,8 +44,22 @@ app.get('/submission', (req, res) => {
         console.log('created!');
     });
 
+    var mailOptions = {
+        to: 'moreirajorge_17@outlook.pt',
+        subject: 'Submission added!',
+        text: `${query.name} added a submission!`
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+
     res.send(key);
-})
+});
 
 //consult results and display
 app.get('/consult', (req, res) => {
