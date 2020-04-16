@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/style.css'>
+    <title>Formulário</title>
+</head>
+
+<body>
+    <h1>Review</h1>
+    <form method="POST">
+
+        <label for="name" placeholder="Name">Name:</label>
+        <input name="name" type="text" />
+
+        <label for="email" placeholder="email">Email:</label>
+        <input name="email" type="email" required="email" />
+
+        <label for="Book" placeholder="Book">Book</label>
+        <input name="Book" type="text" />
+
+        <label for="Description" placeholder="Description">Description:</label>
+        <input name="Description" type="text" />
+
+        <div class="readOption">
+            <input type="radio" name="read" value="Read">Read</input>
+            <input type="radio" name="read" value="Didn´t read">Don´t Read</input>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <% if (locals.success) { %>
+        <div id="result">Your form was submitted with success!</div>
+    <% } %>
+
+</body>
+
+</html>
