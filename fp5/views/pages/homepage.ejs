@@ -13,16 +13,16 @@
     <form method="POST">
 
         <label for="name" placeholder="Name">Name:</label>
-        <input name="name" type="text" />
+        <input name="name" type="text"/>
 
         <label for="email" placeholder="email">Email:</label>
-        <input name="email" type="email" required="email" />
+        <input name="email" />
 
         <label for="Book" placeholder="Book">Book</label>
-        <input name="Book" type="text" />
+        <input name="Book" type="text" required="text" />
 
         <label for="Description" placeholder="Description">Description:</label>
-        <input name="Description" type="text" />
+        <input name="Description" type="text" required="text" />
 
         <div class="readOption">
             <input type="radio" name="read" value="yes">Read</input>
@@ -33,7 +33,7 @@
     </form>
 
     <% if (locals.success) { %>
-        <div id="result">Your form was submitted with success!</div>
+    <div id="result">Your form was submitted with success!</div>
     <% } %>
 
 </body>

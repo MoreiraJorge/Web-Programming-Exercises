@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3000
 const app = express()
 
 const quizRouter = require('./routes/quiz')
+const filterRouter = require('./routes/filters')
 
 app
 
@@ -20,15 +21,7 @@ app
 
     .use('/', quizRouter)
 
-    .get('/review/:email', (req, res) => {
-        const dbPath = path.resolve('db', 'posts.json')
-        const posts = JSON.parse(fs.readFileSync(dbPath))
-        console.log(posts[req.params.email])
-        res.render('pages/reviewDetails', {
-            item: posts[req.params.email]
-        })
-    })
-
+    .use('/review', filterRouter)
 
     .listen(PORT, () => {
         console.log(`server started on http://localhost:${PORT}`)

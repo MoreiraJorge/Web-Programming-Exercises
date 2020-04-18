@@ -1,0 +1,9 @@
+<div>
+    <h4>List of posts</h4>
+    <% list.forEach((item, index) => { %>
+    <div>
+        <h4><%= item.name %></h4>
+        <a href="/review/<%= item.email %>/<%= item.Book %>"> link </a>
+    </div>
+    <%})%>
+</div>
