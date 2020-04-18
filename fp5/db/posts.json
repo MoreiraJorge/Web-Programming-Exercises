@@ -1,1 +1,23 @@
-[{"name":"Jorge","email":"moreirajorge_17@outlook.pt","Book":"Flying Cars","Description":"Good Book","read":"yes"},{"name":"Jose","email":"jose_17@outlook.pt","Book":"boats","Description":"Bad Book","read":"no"}]
+[
+    {
+        "name": "Jorge",
+        "email": "moreirajorge_17@outlook.pt",
+        "Book": "Flying Cars",
+        "Description": "Good Book",
+        "read": "yes"
+    },
+    {
+        "name": "Jorge",
+        "email": "moreirajorge_17@outlook.pt",
+        "Book": "Cooking",
+        "Description": "Fantastic Book",
+        "read": "yes"
+    },
+    {
+        "name": "Jose",
+        "email": "jose_17@outlook.pt",
+        "Book": "boats",
+        "Description": "Bad Book",
+        "read": "no"
+    }
+]
