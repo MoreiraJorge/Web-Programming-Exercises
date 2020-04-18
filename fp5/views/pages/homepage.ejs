@@ -13,10 +13,10 @@
     <form method="POST">
 
         <label for="name" placeholder="Name">Name:</label>
-        <input name="name" type="text"/>
+        <input name="name" required="text"/>
 
         <label for="email" placeholder="email">Email:</label>
-        <input name="email" />
+        <input name="email" required="email"/>
 
         <label for="Book" placeholder="Book">Book</label>
         <input name="Book" type="text" required="text" />
@@ -28,6 +28,9 @@
             <input type="radio" name="read" value="yes">Read</input>
             <input type="radio" name="read" value="no">Don´t Read</input>
         </div>
+
+        <label for="imageFile">Choose a profile picture:</label>
+        <input type="file" id="imageFile" name="imageFile" accept="image/*" formenctype="multipart/form-data">
 
         <button type="submit">Submit</button>
     </form>

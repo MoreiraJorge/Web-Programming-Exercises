@@ -1,31 +1,40 @@
 const express = require('express')
+const multer = require('multer')
 
 const path = require('path')
 const fs = require('fs')
 
 const router = express.Router()
 
+
+const upload = multer({
+	dest: path.resolve('public','images')
+})
+
+
 router
 	.get('/', (req, res) => {
 		res.render('pages/homepage')
 	})
 
-	.post('/', (req, res) => {
+	.post('/', upload.single(), (req, res) => {
 
-		if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(req.params.email)) {
+		const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+		if(re.test(req.body.email) == false){
 			res.send("Email Invalido")
 		}
 
-		if (typeof req.params.name !== Text) {
+		if (typeof req.body.name !== 'string') {
 			res.send("Nome Invalido")
 		}
 
-		if (typeof req.params.Book !== Text) {
-			res.send("Livro inválido")
+		if (typeof req.body.Description !== 'string') {
+			res.send("Descrição Invalida")
 		}
 
-		if (typeof req.params.Description !== Text) {
-			res.send("Descriçao Invalida")
+		if (typeof req.body.Book !== 'string') {
+			res.send("Livro Invalido")
 		}
 
 		const dbPath = path.resolve('db', 'posts.json')
