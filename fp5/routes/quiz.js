@@ -21,7 +21,7 @@ router
 			email: req.body.email,
 			book: req.body.Book,
 			description: req.body.Description,
-			read: req.body.read,
+			read: req.body.read
 		})
 	})
 

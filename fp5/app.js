@@ -20,15 +20,16 @@ app
 
     .use('/', quizRouter)
 
-    /*
-    .get('/review', (req, res) => {
-		const dbPath = path.resolve('db', 'posts.json')
-		const posts = JSON.parse(fs.readFileSync(dbPath))
-		console.log(posts[req.params.reviewId])
-		res.render('pages/review', { item: posts[req.params.reviewId] })
-	})
-    */
-   
+    .get('/review/:email', (req, res) => {
+        const dbPath = path.resolve('db', 'posts.json')
+        const posts = JSON.parse(fs.readFileSync(dbPath))
+        console.log(posts[req.params.email])
+        res.render('pages/reviewDetails', {
+            item: posts[req.params.email]
+        })
+    })
+
+
     .listen(PORT, () => {
         console.log(`server started on http://localhost:${PORT}`)
     })
