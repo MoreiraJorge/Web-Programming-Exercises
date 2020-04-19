@@ -8,7 +8,7 @@ const router = express.Router()
 
 
 const upload = multer({
-	dest: path.resolve('public','images')
+	dest: path.resolve('public', 'images')
 })
 
 
@@ -17,11 +17,12 @@ router
 		res.render('pages/homepage')
 	})
 
-	.post('/', upload.single(), (req, res) => {
+	/*
+	.use(function(req,res,next){
 
 		const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-		if(re.test(req.body.email) == false){
+		if (re.test(req.body.email) == false) {
 			res.send("Email Invalido")
 		}
 
@@ -37,6 +38,11 @@ router
 			res.send("Livro Invalido")
 		}
 
+		next();
+	})
+	*/
+	.post('/', upload.single('imageFile'),(req, res) => {
+
 		const dbPath = path.resolve('db', 'posts.json')
 		const dataRaw = fs.readFileSync(dbPath) || '[]'
 		const data = JSON.parse(dataRaw.toString())
@@ -48,8 +54,10 @@ router
 			email: req.body.email,
 			book: req.body.Book,
 			description: req.body.Description,
-			read: req.body.read
+			read: req.body.read,
+			image: `/images/${ req.file.filename }`
 		})
+
 	})
 
 module.exports = router

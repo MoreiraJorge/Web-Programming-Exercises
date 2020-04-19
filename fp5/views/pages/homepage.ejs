@@ -10,7 +10,7 @@
 
 <body>
     <h1>Review</h1>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
 
         <label for="name" placeholder="Name">Name:</label>
         <input name="name" required="text"/>
@@ -30,7 +30,7 @@
         </div>
 
         <label for="imageFile">Choose a profile picture:</label>
-        <input type="file" id="imageFile" name="imageFile" accept="image/*" formenctype="multipart/form-data">
+        <input type="file" name="imageFile">
 
         <button type="submit">Submit</button>
     </form>
