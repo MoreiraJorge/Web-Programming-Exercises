@@ -1,1 +1,38 @@
-[{"name":"Jorge","email":"moreirajorge_17@outlook.pt","Book":"Flying Cars","Description":"Good Book","read":"yes"},{"name":"Jorge","email":"moreirajorge_17@outlook.pt","Book":"Cooking","Description":"Fantastic Book","read":"yes"},{"name":"Jose","email":"jose_17@outlook.pt","Book":"boats","Description":"Bad Book","read":"no"},{"name":"asd","email":"asd@asd.vkfjds","Book":"dsaf","Description":"asdf","read":"yes"},{"name":"dfgs","email":"sdfg@asdfg.com","Book":"asdfg","Description":"sdfg","read":"yes"},{"name":"dfgs","email":"sdfg@asdfg.com","Book":"asdfg","Description":"sdfg","read":"yes"},{"name":"dfgs","email":"sdfg@asdfg.com","Book":"asdfg","Description":"sdfg","read":"yes"},{"name":"dfgs","email":"sdfg@asdfg.com","Book":"asdfg","Description":"sdfg","read":"yes"},{"name":"fghkjhgk","email":"ghjkg@fdghfgh","Book":"fghjf","Description":"fghj","read":"yes"},{"name":"fghkjhgk","email":"ghjkg@fdghfgh","Book":"fghjf","Description":"fghj","read":"yes"},{"name":"fghkjhgk","email":"ghjkg@fdghfgh","Book":"fghjf","Description":"fghj","read":"yes"},{"name":"fghkjhgk","email":"ghjkg@fdghfgh...","Book":"fghjf","Description":"fghj","read":"yes"},{"name":"fghkjhgk","email":"ghjkg@fdghfgh...","Book":"fghjf","Description":"fghj","read":"yes"},{"name":"asdf","email":"asdf@adfsg.dfg","Book":"sdfg","Description":"sdfg","read":"yes"},{"name":"asdf","email":"asdf@adf","Book":"sdfg","Description":"sdfg","read":"yes"}]
+[
+    {
+        "name": "Jorge",
+        "email": "moreirajorge_17@outlook.pt",
+        "Book": "Flying Cars",
+        "Description": "Good Book",
+        "read": "yes"
+    },
+    {
+        "name": "Jorge",
+        "email": "moreirajorge_17@outlook.pt",
+        "Book": "Cooking",
+        "Description": "Fantastic Book",
+        "read": "yes"
+    },
+    {
+        "name": "Jose",
+        "email": "jose_17@outlook.pt",
+        "Book": "boats",
+        "Description": "Bad Book",
+        "read": "no"
+    },
+    {
+        "name": "asdf",
+        "email": "asdf@asdf.adf",
+        "Book": "asdf",
+        "Description": "asdf",
+        "read": "yes"
+    },
+    {
+        "name": "jklç",
+        "email": "jklç@asdf.sdf",
+        "Book": "jklç",
+        "Description": "jklç",
+        "read": "yes",
+        "image": "/images/3b8fdab66d6ca17627cff90bea608c04"
+    }
+]
