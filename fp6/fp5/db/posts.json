@@ -1,0 +1,46 @@
+[
+    {
+        "name": "Jorge",
+        "email": "moreirajorge_17@outlook.pt",
+        "Book": "Flying Cars",
+        "Description": "Good Book",
+        "read": "yes"
+    },
+    {
+        "name": "Jorge",
+        "email": "moreirajorge_17@outlook.pt",
+        "Book": "Cooking",
+        "Description": "Fantastic Book",
+        "read": "yes"
+    },
+    {
+        "name": "Jose",
+        "email": "jose_17@outlook.pt",
+        "Book": "boats",
+        "Description": "Bad Book",
+        "read": "no"
+    },
+    {
+        "name": "asdf",
+        "email": "asdf@asdf.adf",
+        "Book": "asdf",
+        "Description": "asdf",
+        "read": "yes"
+    },
+    {
+        "name": "jklç",
+        "email": "jklç@asdf.sdf",
+        "Book": "jklç",
+        "Description": "jklç",
+        "read": "yes",
+        "image": "/images/3b8fdab66d6ca17627cff90bea608c04"
+    },
+    {
+        "name": "Jorge",
+        "email": "8160297@estg.ipp.pt",
+        "Book": "Cenas",
+        "Description": "Fixe",
+        "read": "yes",
+        "image": "/images/010d35e140b8a4862b8add617606a46c"
+    }
+]
