@@ -6,7 +6,11 @@ function render() {
         .then((result) => {
 
             const children = result.map((product) => {
-                return `<div>${product.name}</div>`
+                if(product.name != undefined){
+                    return `<div>${product.name}</div>`
+                } else {
+                    console.log('undefined')
+                }
             }).join('')
             listElement.innerHTML = children
         })

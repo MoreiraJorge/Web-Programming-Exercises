@@ -4,9 +4,18 @@ var Review = require("../models/Review");
 var ReviewController = {};
 
 ReviewController.create = async function (req, res) {
-    const result = await new Review(req).create();
-    res.send(result)
-    //res.redirect(`/employees/show/${result._id}`);
+
+    const reviewData = {
+        ...req.body,
+        image: req.file ? `/images/${ req.file.filename }` : ''
+    }
+
+    const result = await new Review(reviewData).save();
+
+    //console.log()
+    //console.log(reviewData)
+    //res.send(result)
+    res.render('pages/reviewDetails', { item: result });
 }
 
 module.exports = ReviewController;

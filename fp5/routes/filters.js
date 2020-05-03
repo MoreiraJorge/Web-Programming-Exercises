@@ -34,7 +34,6 @@ router
         }
 
         /*
-
         Outra maneira:
         
             arrayemail = []
@@ -54,8 +53,8 @@ router
         const posts = arrayemail.filter((item) => {
         return item.nomelivro.replace(/\s/, '') === req.params.livro
         })
-
         */
+       
         res.render('pages/reviewDetails', { item: posts[index] })
     })
 

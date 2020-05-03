@@ -25,11 +25,11 @@ function validationMiddleware(req, _, next) {
 		if (re.test(req.body.email) == false) {
 			errors.email = "Email Invalido"
 		} else
-			if (typeof req.body.Book !== 'string') {
-				errors.Book = "Livro Invalido"
+			if (typeof req.body.book !== 'string') {
+				errors.book = "Livro Invalido"
 			} else
-				if (typeof req.body.Description !== 'string') {
-					errors.Description = "Descrição Invalida"
+				if (typeof req.body.description !== 'string') {
+					errors.description = "Descrição Invalida"
 				}
 
 	//console.log(re.test(req.body.email));
@@ -52,12 +52,13 @@ router
 			res.status(400)
 			res.send(req.errors)
 		} else {
-
+			/*
 			const dbPath = path.resolve('db', 'posts.json')
 			const dataRaw = fs.readFileSync(dbPath) || '[]'
 			const data = JSON.parse(dataRaw.toString())
+			*/
 
-			
+			/*
 			const newData = [
 				...data,
 				{
@@ -70,7 +71,6 @@ router
 			//fs.writeFileSync(dbPath, JSON.stringify(newData))
 			
 
-			/*
 			res.render('pages/review', {
 				name: req.body.name,
 				email: req.body.email,
@@ -81,7 +81,7 @@ router
 			})
 			*/
 
-			review.create(newData, res);
+			review.create(req, res);
 		}
 	})
 

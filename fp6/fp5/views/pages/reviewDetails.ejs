@@ -9,13 +9,15 @@
 
 <body>
     <h1>Review do Livro</h1>
-    <%= item.Book %>
+    <%= item.book %>
     <h2>Review:</h2>
-    <%= item.Description %>
+    <%= item.description %>
     <h2>Review By</h2>
     <p>Author: <%= item.name %></p>
     <p>E-mail: <%= item.email %></p>
     <p>Red the whole book: <%= item.read %></p>
+
+    <img src="<%= item.image %>" alt="image">
 </body>
 
 </html>

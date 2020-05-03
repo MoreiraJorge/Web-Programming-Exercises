@@ -23,7 +23,7 @@ router
         const book = req.params.book
 
         for (let i = 0; i < posts.length; i++) {
-            if (posts[i].email === email && posts[i].Book.replace(/\s/, '') === book.replace(/\s/, '')) {
+            if (posts[i].email === email && posts[i].book.replace(/\s/, '') === book.replace(/\s/, '')) {
                 index = i;
                 break;
             }
