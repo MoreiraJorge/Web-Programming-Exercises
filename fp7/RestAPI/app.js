@@ -2,6 +2,8 @@ require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const path = require('path')
+var swaggerUi = require('swagger-ui-express')
+var swaggerDocument = require('./swagger.json')
 
 const cors = require('cors')
 
@@ -40,6 +42,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.json())
 app.use(HomeRouter)
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 app.use('/api', cors(), apiRouter)
 
 app.listen(PORT, () => {
