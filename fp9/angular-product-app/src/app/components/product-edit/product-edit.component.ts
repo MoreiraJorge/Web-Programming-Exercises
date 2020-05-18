@@ -22,7 +22,7 @@ export class ProductEditComponent implements OnInit {
 
   updateProduct() {
     this.rest.updateProduct(this.route.snapshot.params['id'], this.productData).subscribe((result) => {
-      this.router.navigate(['/product-details/' + result._id]);
+      this.router.navigate(['/product-details/' + result.__id]);
     }, (err) => {
       console.log(err);
     });
