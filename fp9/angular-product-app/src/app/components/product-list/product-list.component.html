@@ -1,0 +1,15 @@
+<h2>Product List</h2>
+
+<div>
+    <button (click)="add()">
+        Add
+    </button>
+</div>
+
+<ul class="product">
+    <li *ngFor="let p of products; let i=index;">
+        <a routerLink="/product-detail/{{p._id}}">
+            <span>{{i+1}}</span> {{p.name}}
+        </a>
+    </li>
+</ul>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from 'src/app/services/rest.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from 'src/app/Models/product';
 
 @Component({
   selector: 'app-product-detail',
@@ -9,16 +10,20 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product: any;
+  product: Product;
 
-  constructor(public rest: RestService, private route: ActivatedRoute, private router: Router) { }
+  constructor(public rest:RestService, private route: ActivatedRoute, private router: Router) {
+  }
 
   ngOnInit(): void {
-    this.rest.getProduct(this.route.snapshot.params['id']).subscribe((data: {}) => {
-      console.log(data);
-      this.product = data;
-    });
+    var idTemp = this.route.snapshot.params['id'];
+    this.rest.getProduct(idTemp).subscribe((data: Product)=>{
+      this.product = data
+    })
+  }
 
+  seeListofProducts(){
+    this.router.navigate(['/products']);
   }
 
 }
