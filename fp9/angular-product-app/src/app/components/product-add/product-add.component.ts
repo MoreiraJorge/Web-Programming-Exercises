@@ -13,11 +13,12 @@ import { Product } from 'src/app/Models/product';
 })
 export class ProductAddComponent implements OnInit {
 
+
   name: string
   description: string
   quantity: number
 
-  productData: Product = new Product(this.name, this.description, this.quantity);
+  @Input() productData: Product = new Product(this.name, this.description, this.quantity);
 
   constructor(public rest: RestService, private route: ActivatedRoute, private router: Router) { }
 
