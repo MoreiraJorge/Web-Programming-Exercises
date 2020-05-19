@@ -11,5 +11,6 @@
         <a routerLink="/product-detail/{{p._id}}">
             <span>{{i+1}}</span> {{p.name}}
         </a>
+        <button class="delete" title="delete product" (click)="delete(p._id)">x</button>
     </li>
 </ul>

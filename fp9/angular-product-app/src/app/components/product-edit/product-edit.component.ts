@@ -21,8 +21,9 @@ export class ProductEditComponent implements OnInit {
   }
 
   updateProduct() {
-    this.rest.updateProduct(this.route.snapshot.params['id'], this.productData).subscribe((result) => {
-      this.router.navigate(['/product-details/' + result.__id]);
+    var idTemp = this.route.snapshot.params['id'];
+    this.rest.updateProduct(idTemp, this.productData).subscribe((result) => {
+      this.router.navigate(['/product-detail/' + idTemp]);
     }, (err) => {
       console.log(err);
     });

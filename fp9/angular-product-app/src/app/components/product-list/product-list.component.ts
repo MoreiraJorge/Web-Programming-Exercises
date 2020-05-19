@@ -10,10 +10,10 @@ import { Route } from '@angular/compiler/src/core';
 })
 export class ProductListComponent implements OnInit {
 
-  products:any=[];
-  rest:RestService;
+  products: any = [];
+  rest: RestService;
 
-  constructor(rest:RestService, private route: ActivatedRoute, private router: Router) { 
+  constructor(rest: RestService, private route: ActivatedRoute, private router: Router) {
     this.rest = rest
   }
 
@@ -21,7 +21,7 @@ export class ProductListComponent implements OnInit {
     this.getProducts();
   }
 
-  getProducts(){
+  getProducts() {
     this.products = [];
     this.rest.getProducts().subscribe((data: {}) => {
       console.log(data)
@@ -29,8 +29,18 @@ export class ProductListComponent implements OnInit {
     })
   }
 
-  add(){
+  add() {
     this.router.navigate(['/product-add'])
+  }
+
+  delete(id) {
+    this.rest.deleteProduct(id)
+      .subscribe(res => {
+        this.getProducts();
+      }, (err) => {
+        console.log(err);
+      }
+      );
   }
 
 }

@@ -41,7 +41,7 @@ export class RestService {
   }
 
   deleteProduct(id: string): Observable<Product> {
-    return this.http.delete<Product>(endpoint + 'product/' + id, httpOptions);
+    return this.http.delete<Product>(endpoint + 'products/' + id, httpOptions);
   }
 
 }
